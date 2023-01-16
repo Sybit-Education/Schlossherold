@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { environment } from "src/environments/environment";
+import { environment } from "../environments/environment";
 
 @Component({
   selector: 'app-root',
@@ -8,5 +8,5 @@ import { environment } from "src/environments/environment";
 })
 export class AppComponent {
   title = 'Schlossherold';
-  base = environment.airtableBase
+  base = environment.airtableBase;
 }
