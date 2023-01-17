@@ -1,6 +1,14 @@
 # Schlossherold
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+Um Angular Projekte zu programmieren, benötigt man Node.js und das Angular CLI (Command Line Interface) auf dem Computer.
+
+Node.js kann von der offiziellen Website heruntergeladen und installiert werden: <https://nodejs.org/en/download/>
+
+Nachdem Node.js installiert ist, kann das Angular CLI über die Befehlszeile mit dem Befehl `npm install -g @angular/cli*  installiert werden.
+
+---
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
 ## Development server
 
