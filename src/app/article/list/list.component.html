@@ -1,7 +1,6 @@
-<ng-container *ngFor="let article of articleList">
-<div class="article-teaser">
-  <img src="{{article.fields.Teaser_Image[0].url}}" />
+<div class="article-list box"
+  *ngFor="let article of articleList" [routerLink]="'/' + article.id">
+  <img *ngIf="article.fields.Teaser_Image" src="{{article.fields.Teaser_Image[0].url}}" />
   <h3>{{ article.fields.Title }}</h3>
   <strong>{{ article.fields.Teaser_Text }}</strong>
 </div>
-</ng-container>
