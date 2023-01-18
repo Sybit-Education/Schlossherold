@@ -1,0 +1,5 @@
+.event-list {
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: repeat(3, minmax(300px, auto));
+}
