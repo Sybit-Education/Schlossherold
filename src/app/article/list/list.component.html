@@ -2,6 +2,7 @@
 <div class="article-teaser">
   <img src="{{article.fields.Teaser_Image[0].url}}" />
   <h3>{{ article.fields.Title }}</h3>
+  <app-author authorID="{{article.fields.Author[0]}}"></app-author>
   <strong>{{ article.fields.Teaser_Text }}</strong>
 </div>
 </ng-container>

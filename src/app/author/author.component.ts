@@ -1,5 +1,5 @@
 import { AirtableRepositoryService } from './../airtable.repository.service';
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable, share } from 'rxjs';
 
 @Component({
@@ -7,20 +7,26 @@ import { Observable, share } from 'rxjs';
   templateUrl: './author.component.html',
   styleUrls: ['./author.component.scss']
 })
-export class AuthorComponent {
+export class AuthorComponent implements OnInit {
 
-  authorList: any;
+  @Input() authorID: string;
+
+
+
+  author: any;
   constructor(private airtableRepository: AirtableRepositoryService){
+
+  }
+  ngOnInit(): void {
     this.airtableRepository.authorTable
-    .select({maxRecords: 10})
-    .firstPage().pipe(share())
+    .find(this.authorID)
+    .pipe(share())
     .subscribe({
       next: (value) => {
-      this.authorList = value
-      console.log(value[0].fields.Name)
-      console.log(this.authorList)
+      this.author = value
     },error: (error) => {
       console.error(error)
     }})
   }
+
 }
