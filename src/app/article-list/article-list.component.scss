@@ -1,10 +1,10 @@
 .article-list {
-  display: flex;
-  gap: 30px;
-  grid-template-columns: repeat(2, auto);
+  display: inline-flex;
+  column-gap: 30px;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .article-list .box {
   min-width: 300px;
-  max-width: 500px;
 }
