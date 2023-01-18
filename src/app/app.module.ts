@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { environment } from "../environments/environment";
 import { ArticleComponent } from './article/article.component';
 import { AuthorComponent } from "./author/author.component";
+import { ListComponent } from './article/list/list.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         ArticleComponent,
         AuthorComponent,
+        ListComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
