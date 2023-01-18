@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 
 import { environment } from "../environments/environment";
 import { ArticleComponent } from './article/article.component';
+import { ListComponent } from './article/list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticleComponent
+    ArticleComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
