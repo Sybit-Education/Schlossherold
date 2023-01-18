@@ -1,8 +1,13 @@
 .article-list {
-  display: inline-flex;
+  display: grid;
   column-gap: 30px;
-  flex-wrap: wrap;
-  flex-direction: column;
+  grid-template-columns: repeat(2, minmax(100px, 100%));
+}
+
+@media screen and (max-width: 768px) {
+  .article-list {
+    grid-template-columns: 100%;
+  }
 }
 
 .article-list .box {
