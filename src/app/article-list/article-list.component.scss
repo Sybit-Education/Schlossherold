@@ -1,0 +1,10 @@
+.article-list {
+  display: flex;
+  gap: 30px;
+  grid-template-columns: repeat(2, auto);
+}
+
+.article-list .box {
+  min-width: 300px;
+  max-width: 500px;
+}
