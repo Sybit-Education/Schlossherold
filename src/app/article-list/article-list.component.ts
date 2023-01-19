@@ -10,10 +10,13 @@ import { share } from 'rxjs/operators';
 export class ArticleListComponent {
 
   articleList: undefined;
-  
+
   constructor(private airtableRepository: AirtableRepositoryService) {
     this.airtableRepository.articleTable
-      .select({maxRecords: 10})
+      .select({
+        maxRecords: 25,
+        view: 'published'
+      })
       .firstPage().pipe(share())
       .subscribe({
         next: (value) => {
