@@ -1,5 +1,37 @@
 .event-list {
   display: grid;
-  column-gap: 30px;
-  grid-template-columns: repeat(3, minmax(300px, auto));
+  column-gap: 3%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: warp;
+  align-items:baseline;
+  grid-template-columns: repeat(3, auto);
+}
+@media screen and (max-width: 768px) {
+  .event-list {
+    grid-template-columns: 100%;
+  }
+}
+
+h2{
+  font-size: small;
+  margin: auto;
+  
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  align-items: center;
+  transform: translateY(25%);
+  padding-bottom: 10px;
+}
+
+.box {
+  border-radius: 0px;
+  background-color: white;
+  border: #003d6a 2px solid;
 }

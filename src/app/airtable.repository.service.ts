@@ -10,7 +10,7 @@ export class AirtableRepositoryService {
   articleTable: Table;
   authorTable: Table;
   editionTable: Table;
-
+  calendarTable: Table;
 
   constructor(private airtable: Airtable) {
     const base: Base = this.airtable.base(environment.airtableBase);
@@ -18,6 +18,6 @@ export class AirtableRepositoryService {
     this.articleTable = base.table({ tableId: 'Article' });
     this.authorTable = base.table({ tableId: 'Author' });
     this.editionTable = base.table({ tableId: 'Edition' });
+    this.calendarTable = base.table({ tableId: 'Calendar' });
   }
-
 }

@@ -8,9 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleComponent } from './article/article.component';
-import { EventsComponent } from './events/events.component';
 import { AuthorComponent } from "./author/author.component";
 import { EditionComponent } from './edition/edition.component';
+import { EventsComponent } from './events/events.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +19,7 @@ import { EditionComponent } from './edition/edition.component';
         AuthorComponent,
         ArticleListComponent,
         EditionComponent,
+        EventsComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

@@ -1,34 +1,16 @@
 <div class="container container-xl">
   <div class="event-list">
-    <div class="box">
-      <h2>Titel</h2>
-      <p>Datum und Uhrzeit</p>
-      <p>Ort</p>
-    </div>
-    <div class="box">
-      <h2>Titel</h2>
-      <p>Datum und Uhrzeit</p>
-      <p>Ort</p>
-    </div>
-    <div class="box">
-      <h2>Titel</h2>
-      <p>Datum und Uhrzeit</p>
-      <p>Ort</p>
-    </div>
-    <div class="box">
-      <h2>Titel</h2>
-      <p>Datum und Uhrzeit</p>
-      <p>Ort</p>
-    </div>
-    <div class="box">
-      <h2>Titel</h2>
-      <p>Datum und Uhrzeit</p>
-      <p>Ort</p>
-    </div>
-    <div class="box">
-      <h2>Titel</h2>
-      <p>Datum und Uhrzeit</p>
-      <p>Ort</p>
+    <div class="box" *ngFor="let calendar of calendarList" >
+      <h2 class="title">{{ calendar.fields.Title }}</h2>
+      <div class="date">
+        Datum:
+        <span>{{ calendar.fields.Date_Start | date : 'd.MM.yyy H:mm'}}</span>
+        <span *ngIf="calendar.fields.Date_End"> - {{ calendar.fields.Date_End | date : 'd.MM H:mm'}}</span>
+      </div>
+      <div class="location" *ngIf="calendar.fields.Location">Ort: {{ calendar.fields.Location }}</div>
+      <ul class="intrest-group">
+        <li *ngFor="let group of calendar.fields.Interest_Group">{{ group }}</li>
+      </ul>
     </div>
   </div>
 </div>
