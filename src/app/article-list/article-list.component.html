@@ -2,7 +2,12 @@
   <div class="article-list">
     <div class="box" *ngFor="let article of articleList" [routerLink]="'/' + article.id">
       <h2>{{ article.fields.Title }}</h2>
-      <app-author authorID="{{article.fields.Author[0]}}"></app-author>
+      <small>
+        <span>{{ article.fields.Publishing_Date }}</span>,
+        <span *ngFor="let author of article.fields.Author">
+          <app-author authorID="{{author}}"></app-author>
+        </span>
+      </small>
       <p>{{ article.fields.Teaser_Text }}</p>
       <img *ngIf="article.fields.Teaser_Image" src="{{article.fields.Teaser_Image[0].url}}"/>
     </div>
