@@ -1,5 +1,15 @@
 .event-list {
   display: grid;
   column-gap: 30px;
-  grid-template-columns: repeat(3, minmax(300px, auto));
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+}
+@media screen and (max-width: 768px) {
+  .event-list {
+    grid-template-columns: 100%;
+  }
 }
