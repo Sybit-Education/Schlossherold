@@ -24,12 +24,14 @@
 
   <div class="article-list">
     <div class="box" *ngFor="let article of articleList" [routerLink]="'/' + article.id">
-      <h2 *ngIf="article.fields.Title">{{ article.fields.Title }}</h2>
-      <img *ngIf="article.fields.Teaser_Image" src="{{article.fields.Teaser_Image[0].url}}"/>
-      <app-author *ngIf="article.fields.Author" authorID="{{article.fields.Author[0]}}"></app-author>
-      <p *ngIf="article.fields.Teaser_Text">{{ article.fields.Teaser_Text }}</p>
       <app-edition *ngIf="article.fields.Edition" editionID="{{article.fields.Edition}}"></app-edition>
+      <img *ngIf="article.fields.Teaser_Image" src="{{article.fields.Teaser_Image[0].url}}"/>
+      <h2 class="article-title">{{ article.fields.Title }}</h2>
+      <small>
+        <span *ngIf="article.fields.Publishing_Date"><em>{{ article.fields.Publishing_Date | date: 'd. MMMM YYYY' }},</em></span>
+        <app-author *ngIf="article.fields.Author" authorID="{{article.fields.Author[0]}}"></app-author>
+      </small>
+      <p *ngIf="article.fields.Teaser_Text">{{ article.fields.Teaser_Text }}</p>
     </div>
   </div>
-</div>
 </div>

@@ -17,7 +17,11 @@ export class ArticleListComponent {
 
   constructor(private airtableRepository: AirtableRepositoryService) {
     this.airtableRepository.articleTable
-      .select({maxRecords: 10, sort: [{field: 'Edition', direction: 'desc' }]})
+      .select({
+        maxRecords: 25, 
+        view: 'published',
+        sort: [{field: 'Edition', direction: 'desc' }]
+       })
       .firstPage().pipe(share())
       .subscribe({
         next: (value) => {
@@ -40,6 +44,7 @@ export class ArticleListComponent {
         }
       });
     }
+    
   filter(filterby) {
     this.articleList = []
     for (let article of this.globalArticleList){
