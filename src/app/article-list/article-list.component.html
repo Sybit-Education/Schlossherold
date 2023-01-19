@@ -1,13 +1,10 @@
 <div class="container container-xl">
   <div class="article-list">
-    <div class="box">
-    <h2>Coding Camp by Sybit</h2>
-    <p>Coding Camp by Sybit</p>
-  </div>
-  <div class="box">
-    <h2>Coding Camp by Sybit</h2>
-    <p>Coding Camp by Sybit</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/SchlossGaienhofen.jpg">
-  </div>
+    <div class="box" *ngFor="let article of articleList" [routerLink]="'/' + article.id">
+      <h2>{{ article.fields.Title }}</h2>
+      <app-author authorID="{{article.fields.Author[0]}}"></app-author>
+      <p>{{ article.fields.Teaser_Text }}</p>
+      <img *ngIf="article.fields.Teaser_Image" src="{{article.fields.Teaser_Image[0].url}}"/>
+    </div>
   </div>
 </div>

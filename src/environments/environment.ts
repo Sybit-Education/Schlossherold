@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   airtableBase: process.env.NG_APP_AIRTABLE_BASE,
-  airtableApi: process.env.NG_APP_AIRTABLE_APIKEY
+  airtableApiKey: process.env.NG_APP_AIRTABLE_APIKEY
 };
 
 /*
