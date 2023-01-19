@@ -7,6 +7,6 @@
   <div class="row">
     <img class="col-sm-4" *ngFor="let image of article.fields.Image_Gallery" src="{{image.url}}">
   </div>
-  <p>{{article.fields.Text}}</p>
+  <p [innerHTML]="article.fields.Text"></p>
   <app-author *ngFor="let author of article.fields.Author" authorID="{{author}}"></app-author>
 </div>
