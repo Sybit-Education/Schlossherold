@@ -1,3 +1,10 @@
+<div class="Start">
+  <img src="/assets/Gaienofen-Campus.jpg">
+  <div class="Heading">
+    <h2>Schlossherold</h2>
+  </div>
+</div>
+<div class="Background">
 <div class="container container-xl">
   <div class="article-list">
     <div class="box" *ngFor="let article of articleList" [routerLink]="'/' + article.id">
@@ -8,4 +15,5 @@
       <p *ngIf="article.fields.Edition"><Strong>{{article.fields.Edition}}</Strong></p>
     </div>
   </div>
+</div>
 </div>

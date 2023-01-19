@@ -1,3 +1,34 @@
+.Start{
+  position:fixed;
+  z-index: -1;
+  width: 100%;
+}
+
+.Start img{
+  position: fixed;
+  z-index: -1;
+}
+
+.Start .Heading{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+}
+
+.Start h2{
+  color: white;
+  padding: 20px 10px 20px 10px;
+  background-color: #003e6a79 ;
+  font-size: 5ch;
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+}
+
+.Background{
+  margin-top: 300px;
+  background-color: white;
+}
+
 .article-list {
   display: grid;
   column-gap: 30px;
