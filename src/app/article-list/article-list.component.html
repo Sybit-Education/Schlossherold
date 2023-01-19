@@ -1,15 +1,36 @@
+<div class="Start">
+  <img src="/assets/Gaienofen-Campus.jpg">
+  <div class="Heading">
+    <h2>Schlossherold</h2>
+  </div>
+</div>
+<div class="Background">
 <div class="container container-xl">
+
+  <div class="filter" (click)="filterView = !filterView">
+    <p>Filter</p>
+    <img src="/assets/filter.png">
+    <br>
+  </div>
+  <div class="DropdownFilter" [hidden]="!filterView">
+  <div class="filterDetails" *ngFor="let edition of editionList" >
+    <div (click)="filter(edition.id)">
+     <app-edition *ngIf="edition.id" editionID="{{edition.id}}"></app-edition>
+    </div>
+
+  </div>
+  <button class="button" (click)="articleList = globalArticleList">Reset</button>
+  </div>
+
   <div class="article-list">
     <div class="box" *ngFor="let article of articleList" [routerLink]="'/' + article.id">
       <h2>{{ article.fields.Title }}</h2>
-      <small>
-        <span>{{ article.fields.Publishing_Date | date:'d. MMMM y' }}</span>,
-        <span *ngFor="let author of article.fields.Author">
-          <app-author authorID="{{author}}"></app-author>
-        </span>
-      </small>
+      <app-author authorID="{{article.fields.Author[0]}}"></app-author>
       <p>{{ article.fields.Teaser_Text }}</p>
       <img *ngIf="article.fields.Teaser_Image" src="{{article.fields.Teaser_Image[0].url}}"/>
+      <app-author *ngIf="article.fields.Author" authorID="{{article.fields.Author[0]}}"></app-author>
+      <p *ngIf="article.fields.Teaser_Text">{{ article.fields.Teaser_Text }}</p>
+      <app-edition *ngIf="article.fields.Edition" editionID="{{article.fields.Edition}}"></app-edition>
     </div>
   </div>
 </div>
