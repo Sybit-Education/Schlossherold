@@ -3,7 +3,7 @@
     <div class="box" *ngFor="let article of articleList" [routerLink]="'/' + article.id">
       <h2>{{ article.fields.Title }}</h2>
       <small>
-        <span>{{ article.fields.Publishing_Date }}</span>,
+        <span>{{ article.fields.Publishing_Date | date:'d. MMMM y' }}</span>,
         <span *ngFor="let author of article.fields.Author">
           <app-author authorID="{{author}}"></app-author>
         </span>
