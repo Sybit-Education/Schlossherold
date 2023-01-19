@@ -1,12 +1,15 @@
 <div class="container" *ngIf="article">
+  <app-edition *ngIf="article.fields.Edition" editionID="{{article.fields.Edition}}"></app-edition>
   <h1>{{ article.fields.Title }}</h1>
   <img *ngIf="article.fields.Teaser_Image" src="{{article.fields.Teaser_Image[0].url}}">
-  <app-edition *ngIf="article.fields.Edition" editionID="{{article.fields.Edition}}"></app-edition>
   <p>{{article.fields.Teaser_Text}}</p>
   <br>
   <div class="row">
     <img class="col-sm-4" *ngFor="let image of article.fields.Image_Gallery" src="{{image.url}}">
   </div>
   <p [innerHTML]="article.fields.Text"></p>
-  <app-author *ngFor="let author of article.fields.Author" authorID="{{author}}"></app-author>
+  <hr />
+  <p>
+    Autor:innen: <app-author *ngFor="let author of article.fields.Author" authorID="{{author}}"></app-author>
+  </p>
 </div>

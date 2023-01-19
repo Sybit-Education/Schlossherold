@@ -1,1 +1,3 @@
-<span *ngIf="edition"> <strong>{{edition.fields.Month | date: 'MMMM yyyy'}}</strong><br></span>
+<span *ngIf="edition" class="edition">
+  {{edition.fields.Month | date: 'MMMM yyyy'}}
+</span>

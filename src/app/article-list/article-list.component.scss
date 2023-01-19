@@ -1,19 +1,19 @@
-.Start{
+.Start {
   position:fixed;
   z-index: -1;
   width: 100%;
-}
 
-.Start img{
-  position: fixed;
-  z-index: -1;
-}
+  img{
+    position: fixed;
+    z-index: -1;
+  }
 
-.Start .Heading{
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  width: 100%;
+  .Heading{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+  }
 }
 
 .Start h2{
@@ -43,8 +43,8 @@
 
 .filter p{
   margin: 0;
-  font-size: 2em;
-  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  font-size: 1.75rem;
+  --font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
 }
 
 .filter img{
@@ -58,7 +58,7 @@
   }
 }
 
-.filterDetails{
+.filterDetails {
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
@@ -78,11 +78,6 @@
   background-color: white;
 }
 
-.article-list {
-  display: grid;
-  column-gap: 30px;
-  grid-template-columns: repeat(2, minmax(100px, 100%));
-}
 
 @media screen and (max-width: 768px) {
   .article-list {
@@ -90,7 +85,17 @@
   }
 }
 
-.article-list .box {
-  min-width: 300px;
-  cursor: pointer;
+.article-list {
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: repeat(2, minmax(100px, 100%));
+
+  .box {
+    min-width: 300px;
+    cursor: pointer;
+
+    .article-title {
+      margin: 0.25rem 0 0.25rem 0;
+    }
+  }
 }
