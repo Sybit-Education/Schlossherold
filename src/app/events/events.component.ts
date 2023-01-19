@@ -8,7 +8,7 @@ import { AirtableRepositoryService } from '../airtable.repository.service';
   styleUrls: ['./events.component.scss']
 })
 export class EventsComponent {
-  
+
   calendarList: undefined;
 
   constructor(private airtableRepository: AirtableRepositoryService) {
@@ -18,7 +18,6 @@ export class EventsComponent {
       .subscribe({
         next: (value) => {
           this.calendarList = value;
-          console.log(value)
         },
         error: (error) => {
           console.error(error)
