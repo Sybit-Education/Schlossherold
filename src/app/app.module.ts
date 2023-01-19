@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleComponent } from './article/article.component';
 import { AuthorComponent } from "./author/author.component";
+import { EditionComponent } from './edition/edition.component';
 import { EventsComponent } from './events/events.component';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { EventsComponent } from './events/events.component';
         ArticleComponent,
         AuthorComponent,
         ArticleListComponent,
+        EditionComponent,
         EventsComponent
     ],
     providers: [],

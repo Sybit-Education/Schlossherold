@@ -1,8 +1,83 @@
-.article-list {
-  display: grid;
-  column-gap: 30px;
-  grid-template-columns: repeat(2, minmax(100px, 100%));
+.Start {
+  position:fixed;
+  z-index: -1;
+  width: 100%;
+
+  img{
+    position: fixed;
+    z-index: -1;
+  }
+
+  .Heading{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+  }
 }
+
+.Start h2{
+  color: white;
+  padding: 20px 10px 20px 10px;
+  background-color: #003e6a79 ;
+  font-size: 5ch;
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+}
+
+.DropdownFilter{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.filter{
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.filter p{
+  margin: 0;
+  font-size: 1.75rem;
+  --font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+}
+
+.filter img{
+  margin: 0;
+  width: 4%;
+  padding-left: 20px;
+}
+@media screen and (max-width: 700px) {
+  .filter img{
+    width: 35px;
+  }
+}
+
+.filterDetails {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+[hidden]{
+  display: none;
+}
+
+.DropdownFilter button{
+  margin-top: 10px;
+  width: 8rem;
+}
+
+.Background{
+  margin-top: 300px;
+  background-color: white;
+}
+
 
 @media screen and (max-width: 768px) {
   .article-list {
@@ -10,6 +85,17 @@
   }
 }
 
-.article-list .box {
-  min-width: 300px;
+.article-list {
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: repeat(2, minmax(100px, 100%));
+
+  .box {
+    min-width: 300px;
+    cursor: pointer;
+
+    .article-title {
+      margin: 0.25rem 0 0.25rem 0;
+    }
+  }
 }

@@ -1,11 +1,15 @@
-<div class="container">
-  <h1>Titel</h1>
-  <img src="https://schulstiftung-baden.de/sites/default/files/Einrichtung-2018-10/Schloss%20Gaienhofen%20Evangelische%20Schule%20am%20Bodensee.JPG">
-  <p>Text</p>
+<div class="container" *ngIf="article">
+  <app-edition *ngIf="article.fields.Edition" editionID="{{article.fields.Edition}}"></app-edition>
+  <h1>{{ article.fields.Title }}</h1>
+  <img *ngIf="article.fields.Teaser_Image" src="{{article.fields.Teaser_Image[0].url}}">
+  <p>{{article.fields.Teaser_Text}}</p>
+  <br>
+  <div class="row">
+    <img class="col-sm-4" *ngFor="let image of article.fields.Image_Gallery" src="{{image.url}}">
+  </div>
+  <p [innerHTML]="article.fields.Text"></p>
+  <hr />
+  <p>
+    Autor:innen: <app-author *ngFor="let author of article.fields.Author" authorID="{{author}}"></app-author>
+  </p>
 </div>
-
-<!--
-<ng-container *ngFor="let article of articleList">
-  <p>article works: {{ article.id }}</p>
-</ng-container>
--->

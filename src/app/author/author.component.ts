@@ -11,8 +11,6 @@ export class AuthorComponent implements OnInit {
 
   @Input() authorID: string;
 
-
-
   author: any;
   constructor(private airtableRepository: AirtableRepositoryService){
 
