@@ -10,6 +10,7 @@ import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleComponent } from './article/article.component';
 import { EventsComponent } from './events/events.component';
 import { AuthorComponent } from "./author/author.component";
+import { EditionComponent } from './edition/edition.component';
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { AuthorComponent } from "./author/author.component";
         ArticleComponent,
         AuthorComponent,
         ArticleListComponent,
+        EditionComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
