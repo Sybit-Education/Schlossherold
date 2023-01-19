@@ -2,6 +2,7 @@
   <div class="event-list">
     <div class="box" *ngFor="let calendar of calendarList" >
       <h2 class="title">{{ calendar.fields.Title }}</h2>
+      <img *ngIf="calendar.fields.Teaser_Image" src="{{calendar.fields.Teaser_Image[0].url}}">
       <div class="date">
         Datum:
         <span>{{ calendar.fields.Date_Start | date : 'd.MM.yyy H:mm'}}</span>
