@@ -1,10 +1,11 @@
 <div class="container container-xl">
   <div class="article-list">
     <div class="box" *ngFor="let article of articleList" [routerLink]="'/' + article.id">
-      <h2>{{ article.fields.Title }}</h2>
-      <app-author authorID="{{article.fields.Author[0]}}"></app-author>
-      <p>{{ article.fields.Teaser_Text }}</p>
+      <h2 *ngIf="article.fields.Title">{{ article.fields.Title }}</h2>
       <img *ngIf="article.fields.Teaser_Image" src="{{article.fields.Teaser_Image[0].url}}"/>
+      <app-author *ngIf="article.fields.Author" authorID="{{article.fields.Author[0]}}"></app-author>
+      <p *ngIf="article.fields.Teaser_Text">{{ article.fields.Teaser_Text }}</p>
+      <p *ngIf="article.fields.Edition"><Strong>{{article.fields.Edition}}</Strong></p>
     </div>
   </div>
 </div>

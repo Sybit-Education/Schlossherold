@@ -8,4 +8,5 @@
   </div>
   <p>{{article.fields.Text}}</p>
   <app-author *ngFor="let author of article.fields.Author" authorID="{{author}}"></app-author>
+  <p *ngIf="article.fields.Edition"><Strong>{{article.fields.Edition}}</Strong></p>
 </div>
