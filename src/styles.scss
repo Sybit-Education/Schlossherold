@@ -8,9 +8,15 @@
 h1 {
   color: var(--theme-primary);
 }
+
+h2 {
+  line-height: 40px;
+}
+
 .box img {
   border-radius: 2px;
 }
+
 .box{
   border-radius: 0px;
   background-color: white;
