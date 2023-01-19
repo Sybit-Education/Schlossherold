@@ -24,6 +24,49 @@
   font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
 }
 
+.DropdownFilter{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.filter{
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.filter p{
+  margin: 0;
+}
+
+.filter img{
+  margin: 0;
+  width: 4%;
+  padding-left: 20px;
+}
+
+
+.filterDetails{
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+[hidden]{
+  display: none;
+}
+
+.DropdownFilter button{
+  margin-top: 10px;
+  width: 15%;
+}
+
 .Background{
   margin-top: 300px;
   background-color: white;

@@ -6,6 +6,22 @@
 </div>
 <div class="Background">
 <div class="container container-xl">
+
+  <div class="filter" (click)="filterView = !filterView">
+    <p>Filter</p>
+    <img src="/assets/filter.png">
+    <br>
+  </div>
+  <div class="DropdownFilter" [hidden]="!filterView">
+  <div class="filterDetails" *ngFor="let edition of editionList" >
+    <div (click)="filter(edition.id)">
+     <app-edition *ngIf="edition.id" editionID="{{edition.id}}"></app-edition>
+    </div>
+
+  </div>
+  <button class="button" (click)="articleList = globalArticleList">Reset</button>
+  </div>
+
   <div class="article-list">
     <div class="box" *ngFor="let article of articleList" [routerLink]="'/' + article.id">
       <h2 *ngIf="article.fields.Title">{{ article.fields.Title }}</h2>

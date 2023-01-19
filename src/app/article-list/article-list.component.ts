@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AirtableRepositoryService } from '../airtable.repository.service';
 import { share } from 'rxjs/operators';
 
@@ -9,7 +9,11 @@ import { share } from 'rxjs/operators';
 })
 export class ArticleListComponent {
 
-  articleList: undefined;
+  filterView: boolean = false;
+
+  globalArticleList: any;
+  articleList: any;
+  editionList: any;
 
   constructor(private airtableRepository: AirtableRepositoryService) {
     this.airtableRepository.articleTable
@@ -17,11 +21,32 @@ export class ArticleListComponent {
       .firstPage().pipe(share())
       .subscribe({
         next: (value) => {
-          this.articleList = value;
+          this.globalArticleList = value;
+          this.articleList = this.globalArticleList
+        },
+        error: (error) => {
+          console.error(error)
+        }
+      });
+    this.airtableRepository.editionTable
+      .select({maxRecords: 10})
+      .firstPage().pipe(share())
+      .subscribe({
+        next: (value) => {
+          this.editionList = value;
         },
         error: (error) => {
           console.error(error)
         }
       });
     }
+  filter(filterby) {
+    this.articleList = []
+    for (let article of this.globalArticleList){
+      if (article.fields.Edition == filterby) {
+        this.articleList.push(article)
+      }
+    }
+  }
+
 }
