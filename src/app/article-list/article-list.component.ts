@@ -33,7 +33,10 @@ export class ArticleListComponent {
         }
       });
     this.airtableRepository.editionTable
-      .select({maxRecords: 10})
+      .select({
+        maxRecords: 10,
+        sort: [{field: 'Edition', direction: 'desc' }]
+      })
       .firstPage().pipe(share())
       .subscribe({
         next: (value) => {
