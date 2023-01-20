@@ -1,10 +1,10 @@
-<div class="Start">
+<div class="start">
   <img src="/assets/Gaienofen-Campus.jpg">
-  <div class="Heading">
+  <div class="heading">
     <h2>Schlossherold</h2>
   </div>
 </div>
-<div class="Background">
+<div class="background">
 <div class="container container-xl">
 
   <div class="filter" (click)="filterView = !filterView">
@@ -12,8 +12,8 @@
     <img src="/assets/filter.png">
     <br>
   </div>
-  <div class="DropdownFilter" [hidden]="!filterView">
-  <div class="filterDetails" *ngFor="let edition of editionList" >
+  <div class="dropdown-filter" [hidden]="!filterView">
+  <div class="filter-details" *ngFor="let edition of editionList" >
     <div (click)="filter(edition.id)">
      <app-edition *ngIf="edition.id" editionID="{{edition.id}}"></app-edition>
     </div>
