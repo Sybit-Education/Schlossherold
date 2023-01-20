@@ -17,7 +17,10 @@ export class EventsComponent {
 
   constructor(private airtableRepository: AirtableRepositoryService) {
     this.airtableRepository.calendarTable
-      .select({maxRecords: 10})
+    .select({
+      maxRecords: 25, 
+      sort: [{field: 'Important', direction: 'desc' }, {field: 'Date_Start', direction: 'desc' }]
+     })
       .firstPage().pipe(share())
       .subscribe({
         next: (value) => {
