@@ -1,4 +1,17 @@
 <div class="container container-xl">
+  <div class="filter" (click)="filterView = !filterView">
+    <p>Filter</p>
+    <img src="/assets/filter.png">
+    <br>
+  </div>
+  <div class="dropdown-filter" [hidden]="!filterView">
+  <div class="filter-details" *ngFor="let filterOptionen of filterOptionenList; let i = index" >
+    <div (click)="filter(filterOptionen)">
+     <p class="filter-options" id="{{filterOptionen}}">{{filterOptionen}}</p>
+    </div>
+  </div>
+    <button class="button" (click)="calendarList = globalCalendarList; filterView = false; resetFilterColor()">Reset</button>
+  </div>
   <div class="event-list">
     <div class="box" *ngFor="let calendar of calendarList" >
       <h3 class="title">{{ calendar.fields.Title }}</h3>

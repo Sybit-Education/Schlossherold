@@ -15,11 +15,11 @@
   <div class="dropdown-filter" [hidden]="!filterView">
   <div class="filter-details" *ngFor="let edition of editionList" >
     <div (click)="filter(edition.id)">
-     <p class="filter-options">{{edition.fields.Month | date: 'MMMM yyyy'}}</p>
+     <p class="filter-options" id="{{edition.id}}">{{edition.fields.Month | date: 'MMMM yyyy'}}</p>
     </div>
 
   </div>
-  <button class="button" (click)="articleList = globalArticleList">Reset</button>
+  <button class="button" (click)="articleList = globalArticleList; filterView = false; resetFilterColor()">Reset</button>
   </div>
 
   <div class="article-list">
