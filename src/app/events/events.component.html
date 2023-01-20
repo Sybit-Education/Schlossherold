@@ -1,18 +1,26 @@
-<div class="container container-xl">
-  <div class="event-list">
-    <div class="box" *ngFor="let calendar of calendarList" >
-      <h3 class="title">{{ calendar.fields.Title }}</h3>
-      <img *ngIf="calendar.fields.Teaser_Image" src="{{calendar.fields.Teaser_Image[0].url}}">
-      <small>
-        <i>
-          <span>{{ calendar.fields.Date_Start | date : 'd.MM.yyy H:mm'}}</span>
-          <span *ngIf="calendar.fields.Date_End"> - {{ calendar.fields.Date_End | date : 'd.MM H:mm'}}</span><br>
-          <span class="location" *ngIf="calendar.fields.Location">Ort: {{ calendar.fields.Location }}</span>
-        </i>
-      </small>
-      <ul class="intrest-group">
-        <li *ngFor="let group of calendar.fields.Interest_Group">{{ group }}</li>
-      </ul>
+<div class="start">
+  <img src="/assets/Gaienofen-Campus.jpg">
+  <div class="heading">
+    <h2>Schlossherold</h2>
+  </div>
+</div>
+<div class="background">
+  <div class="container container-xl">
+    <div class="event-list">
+      <div class="box" *ngFor="let calendar of calendarList" >
+        <h3 class="title">{{ calendar.fields.Title }}</h3>
+        <img *ngIf="calendar.fields.Teaser_Image" src="{{calendar.fields.Teaser_Image[0].url}}">
+        <small>
+          <i>
+            <span>{{ calendar.fields.Date_Start | date : 'd.MM.yyy H:mm'}}</span>
+            <span *ngIf="calendar.fields.Date_End"> - {{ calendar.fields.Date_End | date : 'd.MM H:mm'}}</span><br>
+            <span class="location" *ngIf="calendar.fields.Location">Ort: {{ calendar.fields.Location }}</span>
+          </i>
+        </small>
+        <ul class="intrest-group">
+          <li *ngFor="let group of calendar.fields.Interest_Group">{{ group }}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
