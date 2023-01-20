@@ -1,17 +1,16 @@
 .menu {
-    display: grid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     grid-template-columns: minmax(100px, 180px) minmax(0px, 100%) repeat(3, fit-content(100px));
     background-color: white;
     border-bottom: 1px solid var(--theme-grey-secondary);
     min-height: 120px;
 }
 
-.menu * {
-    height: 100%;
-}
-
 .menu img {
-    padding: 0px 10px;
+    padding: 10px 0 0 10px;
+    height: 100px;
 }
 
 .menu a {
@@ -21,7 +20,6 @@
     font-weight: bold;
     letter-spacing: 1px;
     align-items: center;
-    transform: translateY(25%);
 }
 
 .menu .menu-active, .menu a:hover{
