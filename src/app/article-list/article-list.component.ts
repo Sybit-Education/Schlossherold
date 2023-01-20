@@ -18,7 +18,7 @@ export class ArticleListComponent {
   constructor(private airtableRepository: AirtableRepositoryService) {
     this.airtableRepository.articleTable
       .select({
-        maxRecords: 25, 
+        maxRecords: 25,
         view: 'published',
         sort: [{field: 'Edition', direction: 'desc' }]
        })
@@ -44,14 +44,23 @@ export class ArticleListComponent {
         }
       });
     }
-    
+
   filter(filterby) {
     this.articleList = []
+    this.resetFilterColor();
     for (let article of this.globalArticleList){
       if (article.fields.Edition == filterby) {
         this.articleList.push(article)
       }
     }
+    document.getElementById(filterby).style.color = "var(--theme-secondary)";
+    document.getElementById(filterby).style.borderBottom = "2px var(--theme-secondary) solid";
+    this.filterView = false;
   }
-
+  resetFilterColor(){
+    for (let article of this.globalArticleList){
+      document.getElementById(article.fields.Edition).style.color = "black";
+      document.getElementById(article.fields.Edition).style.borderBottom = "";
+    }
+  }
 }
