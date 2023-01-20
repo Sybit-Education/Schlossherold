@@ -1,14 +1,15 @@
 <div class="container container-xl">
   <div class="event-list">
     <div class="box" *ngFor="let calendar of calendarList" >
-      <h2 class="title" [class.heading]="calendar.fields.Important" >{{ calendar.fields.Title }}</h2>
+      <h3 class="title" [class.heading]="calendar.fields.Important" >{{ calendar.fields.Title }}</h3>
       <img *ngIf="calendar.fields.Teaser_Image" src="{{calendar.fields.Teaser_Image[0].url}}">
-      <div class="date">
-        Datum:
-        <span>{{ calendar.fields.Date_Start | date : 'd.MM.yyy H:mm'}}</span>
-        <span *ngIf="calendar.fields.Date_End"> - {{ calendar.fields.Date_End | date : 'd.MM H:mm'}}</span>
-      </div>
-      <div class="location" *ngIf="calendar.fields.Location">Ort: {{ calendar.fields.Location }}</div>
+      <small>
+        <i>
+          <span>{{ calendar.fields.Date_Start | date : 'd.MM.yyy H:mm'}}</span>
+          <span *ngIf="calendar.fields.Date_End"> - {{ calendar.fields.Date_End | date : 'd.MM H:mm'}}</span><br>
+          <span class="location" *ngIf="calendar.fields.Location">Ort: {{ calendar.fields.Location }}</span>
+        </i>
+      </small>
       <ul class="intrest-group">
         <li *ngFor="let group of calendar.fields.Interest_Group">{{ group }}</li>
       </ul>

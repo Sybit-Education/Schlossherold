@@ -8,6 +8,13 @@
   align-items:baseline;
   grid-template-columns: repeat(3, auto);
 }
+
+@media screen and (max-width: 1024px) {
+  .event-list {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
 @media screen and (max-width: 768px) {
   .event-list {
     grid-template-columns: 100%;
@@ -38,4 +45,11 @@ h2{
 
 .heading {
   color: red;
+}
+
+.location {
+  margin-left: 0.25rem;
+  background-color: var(--theme-secondary);
+  padding:3px;
+  border-radius: 3px;
 }

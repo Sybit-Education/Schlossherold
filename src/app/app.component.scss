@@ -1,12 +1,17 @@
 .menu {
+    display: grid;
+    grid-template-columns: minmax(100px, 180px) minmax(0px, 100%) repeat(3, fit-content(100px));
     background-color: white;
     border-bottom: 1px solid var(--theme-grey-secondary);
-    height: 120px;
     min-height: 120px;
 }
 
 .menu * {
     height: 100%;
+}
+
+.menu img {
+    padding: 0px 10px;
 }
 
 .menu a {
