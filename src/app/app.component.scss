@@ -2,12 +2,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    grid-template-columns: minmax(100px, 180px) minmax(0px, 100%) repeat(3, fit-content(100px));
     background-color: white;
     border-bottom: 1px solid var(--theme-grey-secondary);
     min-height: 120px;
 }
 
+.menu nav{
+  display: flex;
+
+}
 .menu img {
     padding: 10px 0 0 10px;
     height: 100px;
