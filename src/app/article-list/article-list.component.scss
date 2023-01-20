@@ -1,34 +1,44 @@
-.Start {
+.start {
   position:fixed;
   z-index: -1;
   width: 100%;
 
-  img{
+  img {
     position: fixed;
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
     z-index: -1;
   }
 
-  .Heading{
+  .heading {
     display: flex;
     justify-content: center;
     align-content: center;
     width: 100%;
   }
+
+  h2 {
+    color: white;
+    padding: 20px 10px 20px 10px;
+    background-color: #003e6a79 ;
+    font-size: 5ch;
+    font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  }
+
 }
 
-.Start h2{
-  color: white;
-  padding: 20px 10px 20px 10px;
-  background-color: #003e6a79 ;
-  font-size: 5ch;
-  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
-}
-
-.DropdownFilter{
+.dropdown-filter {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-bottom: 20px;
+
+  button{
+    margin-top: 10px;
+    width: 8rem;
+  }
+
 }
 
 .filter{
@@ -39,50 +49,45 @@
   align-items: center;
   justify-content: flex-end;
   cursor: pointer;
+
+  p {
+    margin: 0;
+    font-size: 1.75rem;
+    --font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  }
+
+  img {
+    margin: 0;
+    width: 4%;
+    padding-left: 20px;
+  }
+
 }
 
-.filter p{
-  margin: 0;
-  font-size: 1.75rem;
-  --font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
-}
-
-.filter img{
-  margin: 0;
-  width: 4%;
-  padding-left: 20px;
-}
 @media screen and (max-width: 700px) {
   .filter img{
     width: 35px;
   }
 }
 
-.filterDetails {
+.filter-details {
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
 }
 
-[hidden]{
+.filter-options{
+  font-size: 1em;
+  margin-bottom: 1vh;
+}
+
+[hidden] {
   display: none;
 }
 
-.DropdownFilter button{
-  margin-top: 10px;
-  width: 8rem;
-}
-
-.Background{
+.background{
   margin-top: 300px;
   background-color: white;
-}
-
-
-@media screen and (max-width: 768px) {
-  .article-list {
-    grid-template-columns: 100%;
-  }
 }
 
 .article-list {
@@ -97,5 +102,11 @@
     .article-title {
       margin: 0.25rem 0 0.25rem 0;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .article-list {
+    grid-template-columns: 100%;
   }
 }

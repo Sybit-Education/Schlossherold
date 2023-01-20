@@ -8,6 +8,13 @@
   align-items:baseline;
   grid-template-columns: repeat(3, auto);
 }
+
+@media screen and (max-width: 1024px) {
+  .event-list {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
 @media screen and (max-width: 768px) {
   .event-list {
     grid-template-columns: 100%;
@@ -36,6 +43,12 @@ h2{
   border: #003d6a 2px solid;
 }
 
+.location {
+  margin-left: 0.25rem;
+  background-color: var(--theme-secondary);
+  padding:3px;
+  border-radius: 3px;
+}
 .dropdown-filter {
   display: flex;
   flex-direction: column;
