@@ -11,6 +11,7 @@ import { ArticleComponent } from './article/article.component';
 import { AuthorComponent } from "./author/author.component";
 import { EditionComponent } from './edition/edition.component';
 import { EventsComponent } from './events/events.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { EventsComponent } from './events/events.component';
         AuthorComponent,
         ArticleListComponent,
         EditionComponent,
-        EventsComponent
+        EventsComponent,
+        EventDetailsComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

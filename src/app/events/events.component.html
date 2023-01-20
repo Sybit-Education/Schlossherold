@@ -1,6 +1,6 @@
 <div class="container container-xl">
   <div class="event-list">
-    <div class="box" *ngFor="let calendar of calendarList" >
+    <div class="box" *ngFor="let calendar of calendarList" [routerLink]="'/events/' + calendar.id">
       <h3 class="title" [class.heading]="calendar.fields.Important" >{{ calendar.fields.Title }}</h3>
       <img *ngIf="calendar.fields.Teaser_Image" src="{{calendar.fields.Teaser_Image[0].url}}">
       <small>
