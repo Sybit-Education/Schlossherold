@@ -26,7 +26,7 @@
         <h3 class="title" [class.heading]="calendar.fields.Important" >{{ calendar.fields.Title }}</h3>
         <small>
           <i>
-            <span>{{ calendar.fields.Date_Start | date : 'd.MM H:mm'}}</span>
+            <span>{{ calendar.fields.Date_Start | date : 'd.MM.yyy H:mm'}}</span>
             <span *ngIf="calendar.fields.Date_End"> - {{ calendar.fields.Date_End | date : 'd.MM.yyy H:mm'}}</span><br>
             <span class="location" *ngIf="calendar.fields.Location">Ort: {{ calendar.fields.Location }}</span>
           </i>
