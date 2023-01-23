@@ -4,7 +4,7 @@
   <img *ngIf="calendar.fields.Teaser_Image" src="{{calendar.fields.Teaser_Image[0].url}}">
   <i>
     <span>{{ calendar.fields.Date_Start | date : 'd.MM.yyy H:mm'}}</span>
-    <span *ngIf="calendar.fields.Date_End"> - {{ calendar.fields.Date_End | date : 'd.MM H:mm'}}</span><br>
+    <span *ngIf="calendar.fields.Date_End"> - {{ calendar.fields.Date_End | date : 'd.MM.yyy H:mm'}}</span><br>
     <span class="location" *ngIf="calendar.fields.Location">Ort: {{ calendar.fields.Location }}</span>
   </i>
   <div class="row"></div>
